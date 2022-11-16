@@ -1,2 +1,2 @@
-web: node build/server.json
+web: node build/server.js
 release: node build/ace migration:run --force
