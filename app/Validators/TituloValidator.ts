@@ -30,7 +30,7 @@ export default class TituloValidator {
     descricao: schema.string({}, [
       rules.required()
     ]),
-    duracao: schema.dateTime({}, [
+    duracao: schema.string({}, [
       rules.required()
     ])
   })
