@@ -1,6 +1,6 @@
 import { schema, rules, CustomMessages } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import UsersSchema from '../../database/migrations/1660907536148_users'
+
 
 export default class RegisterUserValidator {
   constructor(protected ctx: HttpContextContract) {}
