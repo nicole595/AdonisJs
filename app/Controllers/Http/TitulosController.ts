@@ -1,5 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Titulo from 'App/Models/Titulo'
+import TituloValidator from '../../Validators/TituloValidator'
 
 export default class TitulosController {
     public async index({ }: HttpContextContract) {
@@ -23,10 +24,12 @@ export default class TitulosController {
       }
     
       public async update({ request, params, response }: HttpContextContract) {
-        const { name } = await request.validate(TituloValidator)
+        const { descricao, duracao, tipo } = await request.validate(TituloValidator)
         try {
           const topic = await Titulo.findOrFail(params.id)
-          topic.name = name
+          topic.descricao = descricao
+          topic.duracao = duracao
+          topic.tipo = tipo
           await topic.save()
           return topic
     
